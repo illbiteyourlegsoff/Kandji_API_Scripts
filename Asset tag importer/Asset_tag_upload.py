@@ -3,11 +3,11 @@ from typing import Dict
 
 #####Server instance name
 # instnme="trey"  ### if trey.kandji.io was your instance, you would just put trey
-instnme = "treyhowell"
+instnme = "trey"
 
 ####Enterprise API token
 # token="add token here"
-token = '60283808-8361-4446-bebc-60c6e2c2cb76'
+token = '6028xxxxxxxxxxb76'
 
 ####location of csv file. Will make cleaner later
 import tkinter as tk
