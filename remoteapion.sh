@@ -20,23 +20,9 @@ token="add token here"
 
 
 
-######get device serial number 
-serial=$(ioreg -l | grep IOPlatformSerialNumber | awk '{print $NF}' | sed -e 's/^"//' -e 's/"$//')
-
-
-
-
-####get this device from the device list and pull out Device UUID
-rawCall=$(curl --location --request GET 'https://'$instnme'.clients.us-1.kandji.io/api/v1/devices/?serial_number='$serial'' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer '$token'' | cut -b 16-51)
-
-
-
-
 
 ####this will send the call to enable remote desktop. Change to false below if you want to disable remote desktop
-curl --location --request POST 'https://'$instnme'.clients.us-1.kandji.io/api/v1/devices/'$rawCall'/action/remotedesktop/' \
+curl --location --request POST 'https://'$instnme'.clients.us-1.kandji.io/api/v1/devices/'$DEVICE_ID'/action/remotedesktop/' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer '$token'' \
 --data-raw '{
